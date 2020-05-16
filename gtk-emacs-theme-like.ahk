@@ -237,28 +237,6 @@ is_target()
   Return
 
 ;
-; <ctrl>w
-; cut
-;
-^w::
-  If is_target()
-    Send %A_ThisHotkey%
-  Else
-    Send ^x
-  Return
-
-;
-; <ctrl>y
-; paste
-;
-^y::
-  If is_target()
-    Send %A_ThisHotkey%
-  Else
-    Send ^v
-  Return
-
-;
 ; <ctrl>k
 ; delete chars from cursor to end of line
 ;
@@ -289,10 +267,10 @@ is_target()
   Return
 
 ;
-; <ctrl>m
+; <ctrl>j
 ; new line(enter)
 ;
-^m::
+^j::
   If is_target()
     Send %A_ThisHotkey%
   Else
@@ -300,10 +278,10 @@ is_target()
   Return
 
 ;
-; <ctrl>r
+; <ctrl>i
 ; find
 ;
-^r::
+^i::
   If is_target()
     Send %A_ThisHotkey%
   Else
@@ -320,3 +298,15 @@ is_target()
   Else
     Send ^a
   Return
+
+;
+; <alt>q
+; close window
+;
+!q::
+  If is_target()
+    Send %A_ThisHotkey%
+  Else
+    Send !{F4}
+  Return
+
